@@ -1,0 +1,223 @@
+/* INITIAL STYLES */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* INITIAL STYLES */
+
+/* GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html {
+  /* # SPACE SYSTEM */
+  /* ## TYPOGRAPHY - FONT SIZES */
+  --10px: calc(10rem / 16);
+  --12px: calc(12rem / 16);
+  --14px: calc(14rem / 16);
+  --16px: calc(16rem / 16);
+  --18px: calc(18rem / 16);
+  --20px: calc(20rem / 16);
+  --24px: calc(24rem / 16);
+  --36px: calc(36rem / 16);
+  --44px: calc(44rem / 16);
+  --52px: calc(52rem / 16);
+  --62px: calc(62rem / 16);
+  --74px: calc(74rem / 16);
+  --86px: calc(86rem / 16);
+  --98px: calc(98rem / 16);
+
+  /* ## WHITESPACE */
+  --2ws: calc(2rem / 16);
+  --4ws: calc(4rem / 16);
+  --8ws: calc(8rem / 16);
+  --12ws: calc(12rem / 16);
+  --16ws: calc(16rem / 16);
+  --24ws: calc(24rem / 16);
+  --32ws: calc(32rem / 16);
+  --48ws: calc(48rem / 16);
+  --64ws: calc(64rem / 16);
+  --80ws: calc(80rem / 16);
+  --96ws: calc(96rem / 16);
+  --128ws: calc(128rem / 16);
+
+  /* # COLORS */
+  /* ### Primary */
+  /* - Blue:  */
+  --clr-pb: hsl(246, 80%, 60%);
+  /* - Light red (work):  */
+  --clr-plr: hsl(15, 100%, 70%);
+  /* - Soft blue (play):  */
+  --clr-psb: hsl(195, 74%, 62%);
+  /* - Light red (study): */
+  --clr-plr: hsl(348, 100%, 68%);
+  /* - Lime green (exercise):  */
+  --clr-plg: hsl(145, 58%, 55%);
+  /* - Violet (social):  */
+  --clr-pv: hsl(264, 64%, 52%);
+  /* - Soft orange (self care):  */
+  --clr-pso: hsl(43, 84%, 65%);
+  /* ### Neutral */
+  /* - Very dark blue:  */
+  --clr-nvdb: hsl(226, 43%, 10%);
+  /* - Dark blue:  */
+  --clr-ndb: hsl(235, 46%, 20%);
+  /* - Desaturated blue:  */
+  --clr-ndsb: hsl(235, 45%, 61%);
+  /* - Pale Blue:  */
+  --clr-npb: hsl(236, 100%, 87%);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: var(--18px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--clr-npb);
+}
+
+/* GLOBAL */
+
+/* STYLES */
+
+.container {
+  background-color: var(--clr-nvdb);
+  min-width: calc(375rem / 16);
+  max-width: calc(1440rem / 16);
+  margin: auto;
+}
+
+.cards {
+  margin: 0 var(--24ws);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--24ws);
+}
+
+.main-card {
+  background-color: var(--clr-ndb);
+  border-radius: var(--12ws);
+}
+
+.card-options {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--24ws);
+}
+
+.card-header {
+  background-color: var(--clr-pb);
+
+  display: flex;
+  gap: var(--24ws);
+
+  padding: var(--24ws);
+}
+
+.card-photo {
+  box-shadow: 0 0 0 var(--2ws) #fff;
+  border-radius: 50%;
+}
+
+.card-option:link,
+.card-option:visited {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--clr-npb);
+}
+
+.card {
+  border-radius: 50px;
+  background-color: var(--clr-plg);
+  background-image: url("/images/icon-exercise.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+  border-radius: var(--12ws);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--12ws);
+  background-color: var(--clr-ndb);
+  padding: var(--24ws);
+  overflow: hidden;
+  border-radius: var(--12ws);
+}
+
+.content-img {
+  height: calc(40rem / 16);
+  background: none;
+}
+
+.card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-item .title,
+.card-item .time {
+  color: #fff;
+  font-weight: 300;
+}
+
+.card-item .title {
+  font-size: var(--18px);
+  font-weight: 500;
+}
+
+.dots {
+  width: var(--24ws);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.dot {
+  background-color: var(--clr-npb);
+  border-radius: 50%;
+  padding: var(--2ws);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot::before {
+  content: "";
+  background-color: var(--clr-npb);
+  border-radius: 50%;
+  padding: var(--2ws);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dot::after {
+  content: "";
+  background-color: var(--clr-npb);
+  border-radius: 50%;
+  padding: var(--2ws);
+
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+
+/* STYLES */
