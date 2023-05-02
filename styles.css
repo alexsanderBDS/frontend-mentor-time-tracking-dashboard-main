@@ -3,6 +3,9 @@
 .attribution {
   font-size: 11px;
   text-align: center;
+
+  background-color: var(--clr-nvdb);
+  padding: var(--24ws) 0;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -56,7 +59,7 @@ html {
   /* - Blue:  */
   --clr-pb: hsl(246, 80%, 60%);
   /* - Light red (work):  */
-  --clr-plr: hsl(15, 100%, 70%);
+  --clr-plrw: hsl(15, 100%, 70%);
   /* - Soft blue (play):  */
   --clr-psb: hsl(195, 74%, 62%);
   /* - Light red (study): */
@@ -99,6 +102,7 @@ body {
 
 .cards {
   margin: 0 var(--24ws);
+  padding: var(--64ws) 0;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -108,6 +112,7 @@ body {
 .main-card {
   background-color: var(--clr-ndb);
   border-radius: var(--12ws);
+  overflow: hidden;
 }
 
 .card-options {
@@ -137,22 +142,57 @@ body {
   color: var(--clr-npb);
 }
 
+.card-option.active {
+  color: #fff;
+}
+
 .card {
   border-radius: 50px;
+  background-repeat: no-repeat;
+  border-radius: var(--12ws);
+
+  height: calc(144rem / 16);
+  position: relative;
+}
+
+.card[data-img="work"] {
+  background-color: var(--clr-plrw);
+  background-image: url("/images/icon-work.svg");
+  background-position: 90% -15%;
+}
+.card[data-img="play"] {
+  background-color: var(--clr-psb);
+  background-image: url("/images/icon-play.svg");
+  background-position: 90% -15%;
+}
+.card[data-img="study"] {
+  background-color: var(--clr-plr);
+  background-image: url("/images/icon-study.svg");
+  background-position: 90% -15%;
+}
+.card[data-img="exercise"] {
   background-color: var(--clr-plg);
   background-image: url("/images/icon-exercise.svg");
-  background-repeat: no-repeat;
   background-position: 90% 0;
-  border-radius: var(--12ws);
+}
+.card[data-img="social"] {
+  background-color: var(--clr-pv);
+  background-image: url("/images/icon-social.svg");
+  background-position: 90% -15%;
+}
+.card[data-img="self-care"] {
+  background-color: var(--clr-pso);
+  background-image: url("/images/icon-self-care.svg");
+  background-position: 90% -15%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: var(--12ws);
+
   background-color: var(--clr-ndb);
   padding: var(--24ws);
-  overflow: hidden;
   border-radius: var(--12ws);
 }
 
