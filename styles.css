@@ -125,9 +125,24 @@ body {
   background-color: var(--clr-pb);
 
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: var(--24ws);
 
-  padding: var(--24ws);
+  padding: var(--32ws);
+
+  border-radius: var(--12ws);
+}
+
+.card-info p {
+  font-size: var(--16px);
+  margin-bottom: var(--8ws);
+}
+
+.card-name {
+  font-size: var(--24px);
+  font-weight: 300;
+  color: #fff;
 }
 
 .card-photo {
@@ -151,8 +166,12 @@ body {
   background-repeat: no-repeat;
   border-radius: var(--12ws);
 
-  height: calc(144rem / 16);
+  height: calc(165rem / 16);
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .card[data-img="work"] {
@@ -192,13 +211,8 @@ body {
   gap: var(--12ws);
 
   background-color: var(--clr-ndb);
-  padding: var(--24ws);
+  padding: var(--32ws);
   border-radius: var(--12ws);
-}
-
-.content-img {
-  height: calc(40rem / 16);
-  background: none;
 }
 
 .card-item {
@@ -216,6 +230,10 @@ body {
 .card-item .title {
   font-size: var(--18px);
   font-weight: 500;
+}
+
+.card-item .description {
+  font-size: var(--16px);
 }
 
 .dots {
@@ -258,6 +276,24 @@ body {
   top: 50%;
   left: 100%;
   transform: translate(-100%, -50%);
+}
+
+@media (min-width: calc(472em / 16)) {
+  .card-options {
+    padding: var(--12ws);
+  }
+
+  .card-option:link,
+  .card-option:active {
+    font-size: var(--14px);
+  }
+
+  .content {
+    padding: var(--32ws) var(--12ws);
+    /* height: calc(200 / 16); */
+    width: 100%;
+    /* font-size: var(--10px); */
+  }
 }
 
 /* STYLES */

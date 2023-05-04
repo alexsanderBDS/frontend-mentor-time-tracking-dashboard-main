@@ -70,10 +70,6 @@ function addCards() {
     divAllEl.appendChild(divItem1El);
     divAllEl.appendChild(divItem2El);
 
-    const divImg = document.createElement("div");
-    divImg.classList.add("content-img");
-
-    cardEl.appendChild(divImg);
     cardEl.appendChild(divAllEl);
 
     return cardEl;
