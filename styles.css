@@ -86,7 +86,29 @@ body {
   font-size: var(--18px);
   font-weight: 400;
   line-height: 1;
+  background-color: #000;
   color: var(--clr-npb);
+}
+
+/* GET THIS FROM STACKOVERFLOW - CHANGE SCROLLBAR COLOR */
+/* LINK: https://stackoverflow.com/questions/12293275/how-to-change-the-scrollbar-color-using-css */
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: var(--clr-ndb);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* GLOBAL */
@@ -155,6 +177,12 @@ body {
   text-decoration: none;
   text-transform: capitalize;
   color: var(--clr-npb);
+
+  transition: color 0.5s;
+}
+
+.card-option:hover {
+  color: #fff;
 }
 
 .card-option.active {
@@ -172,6 +200,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  cursor: pointer;
 }
 
 .card[data-img="work"] {
@@ -205,6 +235,31 @@ body {
   background-position: 90% -15%;
 }
 
+.card::after {
+  content: "";
+  background-color: inherit;
+  background-image: inherit;
+  background-repeat: inherit;
+  background-position: 90% 45%;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  top: 0;
+  opacity: 0;
+  border-radius: var(--12ws);
+  visibility: hidden;
+  pointer-events: none;
+
+  /* SET TRANSITION IF PREFERS */
+  /* transition: all 0.2s; */
+}
+
+.card:hover::after {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -213,6 +268,13 @@ body {
   background-color: var(--clr-ndb);
   padding: var(--32ws);
   border-radius: var(--12ws);
+
+  transition: filter 0.5s;
+}
+
+.content:hover,
+.content:active {
+  filter: brightness(150%) saturate(80%);
 }
 
 .card-item {
@@ -278,6 +340,8 @@ body {
   transform: translate(-100%, -50%);
 }
 
+/* STYLES */
+
 @media (min-width: calc(472em / 16)) {
   .card-options {
     padding: var(--12ws);
@@ -288,12 +352,95 @@ body {
     font-size: var(--14px);
   }
 
+  .card {
+    height: calc(139rem / 16);
+  }
+
   .content {
     padding: var(--32ws) var(--12ws);
-    /* height: calc(200 / 16); */
+    gap: var();
     width: 100%;
-    /* font-size: var(--10px); */
+  }
+  .card-info p {
+    font-size: var(--10px);
+  }
+
+  .card-item .description,
+  .card-item .time {
+    font-size: var(--10px);
   }
 }
 
-/* STYLES */
+@media (min-width: calc(696em / 16)) {
+  .main-card {
+    grid-row: 1 / span 2;
+  }
+
+  .card-header {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .card-options {
+    flex-direction: column;
+    gap: var(--24ws);
+    padding: var(--24ws);
+    margin-top: 10%;
+  }
+
+  .card-name {
+    margin-bottom: var(--32ws);
+    line-height: 1.5;
+  }
+
+  .card {
+    height: calc(210rem / 16);
+  }
+
+  .content {
+    padding: var(--32ws);
+    gap: var(--32ws);
+  }
+
+  .card-item:last-child {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: var(--12ws);
+  }
+
+  .card-item .time {
+    font-size: var(--36px);
+  }
+  .card-item .description {
+    font-size: var(--12px);
+  }
+}
+
+@media (min-width: calc(696em / 16)) {
+  body {
+    position: relative;
+  }
+
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .attribution {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}
+
+@media (min-width: calc(1144em / 16)) {
+  .cards {
+    margin: 0 17%;
+  }
+}

@@ -1,10 +1,29 @@
 import data from "./data.json" assert { type: "json" };
 
 window.addEventListener("load", () => {
+  setGithubUserToCard("Alexsander", "Batista", "alexsanderBDS");
   addAnchorKeys();
   addCards();
   selectOption();
 });
+
+async function setGithubUserToCard(name = "", lastName = "", userName = "") {
+  if (name === "" && lastName === "" && userName === "") {
+    throw new Error("Name, Lastname and Username are required!");
+  }
+
+  try {
+    const photoEl = document.querySelector(".card-photo");
+    const cardNameEl = document.querySelector(".card-name");
+    const response = await fetch(`https://api.github.com/users/${userName}`);
+    const data = await response.json();
+
+    photoEl.setAttribute("src", data.avatar_url);
+    cardNameEl.textContent = `${name} ${lastName}`;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 function addAnchorKeys() {
   const cardOpEl = document.querySelector(".card-options");
