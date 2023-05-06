@@ -206,32 +206,32 @@ body::-webkit-scrollbar-thumb {
 
 .card[data-img="work"] {
   background-color: var(--clr-plrw);
-  background-image: url("./images/icon-work.svg");
+  background-image: url(images/icon-work.svg);
   background-position: 90% -15%;
 }
 .card[data-img="play"] {
   background-color: var(--clr-psb);
-  background-image: url("./images/icon-play.svg");
+  background-image: url(images/icon-play.svg);
   background-position: 90% -15%;
 }
 .card[data-img="study"] {
   background-color: var(--clr-plr);
-  background-image: url("./images/icon-study.svg");
+  background-image: url(images/icon-study.svg);
   background-position: 90% -15%;
 }
 .card[data-img="exercise"] {
   background-color: var(--clr-plg);
-  background-image: url("./images/icon-exercise.svg");
+  background-image: url(images/icon-exercise.svg);
   background-position: 90% 0;
 }
 .card[data-img="social"] {
   background-color: var(--clr-pv);
-  background-image: url("./images/icon-social.svg");
+  background-image: url(images/icon-social.svg);
   background-position: 90% -15%;
 }
 .card[data-img="self-care"] {
   background-color: var(--clr-pso);
-  background-image: url("./images/icon-self-care.svg");
+  background-image: url(images/icon-self-care.svg);
   background-position: 90% -15%;
 }
 
